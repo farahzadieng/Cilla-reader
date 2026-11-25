@@ -1,0 +1,7 @@
+/node_modules/
+/dist/
+/.wrangler/
+/model-download/
+/public/models/
+
+/cilla-mini-models.tar.gz

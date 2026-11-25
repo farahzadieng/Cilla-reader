@@ -6,7 +6,7 @@ def find(name):
  f=next((f for f in files if f.name==name),None)
  if not f: raise SystemExit('Missing '+name)
  return f
-def url(f):return '/models/'+f.relative_to(root).as_posix()
+def url(f):return './models/'+f.relative_to(root).as_posix()
 weights=next((f for f in files if f.name=='model.q8.gguf'),None);quant='q8' if weights else 'f32';weights=weights or find('model.safetensors');voices={f.stem:url(f) for f in files if f.suffix=='.safetensors' and (f.parent.name in ('voices','embeddings') or f.name=='default-voice.safetensors')};
 if not voices:raise SystemExit('No voice embeddings found; inspect downloaded files.')
 manifest={'quant':quant,'model':{'weights':{quant:url(weights)},'tokenizer':url(find('tokenizer.json')),'config':url(find('config.json')),'voices':voices,'defaultVoice':'parisa' if 'parisa' in voices else next(iter(voices))}}

@@ -1,1 +1,1 @@
-{"name":"cilla-reader","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"vite","build":"vite build","deploy":"npm run build && wrangler deploy"},"dependencies":{"phonon-tts":"0.4.2"},"devDependencies":{"vite":"^7.0.0","wrangler":"^4.0.0"}}
+{"name":"cilla-reader","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"vite","build":"vite build","deploy":"npm run build && wrangler deploy"},"dependencies":{"phonon-tts":"0.7.1"},"devDependencies":{"@types/node":"^22.20.7","vite":"^7.0.0","wrangler":"^4.0.0"}}
