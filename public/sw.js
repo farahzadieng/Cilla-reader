@@ -3,10 +3,14 @@ const shell = scope.href;
 const models = new URL('models/', scope).pathname;
 const modelManifest = new URL('models/model.json', scope).pathname;
 const cacheName = 'cilla-shell-v2:' + scope.pathname;
+const installAssets = [
+  '', 'manifest.webmanifest', 'icon.svg', 'icons/icon-192.png', 'icons/icon-512.png',
+  'icons/icon-maskable-512.png', 'icons/icon-monochrome-512.png', 'icons/apple-touch-icon-180.png',
+];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(cacheName).then((cache) =>
-    cache.addAll(['', 'icon.svg', 'manifest.webmanifest'].map((path) => new URL(path, scope).href))
+    cache.addAll(installAssets.map((path) => new URL(path, scope).href))
   ));
 });
 
